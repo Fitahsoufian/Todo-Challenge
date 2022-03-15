@@ -2,6 +2,8 @@ const mysql = require('mysql');
 const http = require('http');
 const Project = require('../models/projectModel');
 const { getProj,createProj, deleteProj, updateProj } = require('../controllers/projectController');
+const Task = require('../models/taskModel');
+const { getTask,createTask, deleteTask, updateTask } = require('../controllers/taskController');
 
 
 
