@@ -18,10 +18,18 @@ let createTask = (req,res)=>{
         res.end()
     })
     
-
 }
-
+let getTask = async (req,res) => {
+   try{
+    let getAll = new Task
+    allTask = await getAll.getAll()
+    res.writeHead(200,{ 'Content-Type': 'application/json' })
+    res.end(JSON.stringify(allTask))} 
+    catch (error) {
+    console.log(error)
+}
+}
 module.exports = {
-    createTask
-    
+    createTask,
+    getTask
 }

@@ -33,6 +33,9 @@ const server = http.createServer((req,res)=>{
             id = req.url.split("/")[3]
             deleteProj(req,res,id)
         }
+        else if(req.url === "/api/tasks" && req.method ==="GET"){
+            getTask(req,res)
+        }
         else if(req.url.match(/\/api\/tasks\/([0-9]+)/) && req.method === "GET"){
             id = req.url.split("/")[3]
             getTask(req,res,id)
