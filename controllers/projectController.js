@@ -19,14 +19,25 @@ let createProj = async (req,res)=>{
     } catch (error) {
         console.log(error)
         
-    }
-    
-
-        
-    
+    };    
 }
+let getProj = async (req,res) => {
+
+    try {
+        let getAll = new Project
+        allProj = await getAll.getAll()
+        res.writeHead(200,{ 'Content-Type': 'application/json' })
+        res.end(JSON.stringify(allProj))
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+
+} 
 module.exports = {
     createProj,
+    getProj,
     
     
     
