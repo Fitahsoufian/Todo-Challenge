@@ -47,7 +47,7 @@ const server = http.createServer((req,res)=>{
         
         else if(req.url.match(/\/api\/tasks\/([0-9]+)/) && req.method === "PUT"){
             id = req.url.split("/")[3]
-            updateTask(id,key,value)
+            updateTask(req,res,id)
         }
         
         else if(req.url.match(/\/api\/tasks\/([0-9]+)/) && req.method === "DELETE"){
