@@ -52,7 +52,6 @@ const server = http.createServer((req,res)=>{
         
         else if(req.url.match(/\/api\/tasks\/([0-9]+)/) && req.method === "DELETE"){
             id = req.url.split("/")[3]
-
             deleteTask(req,res,id)
         }
         else {

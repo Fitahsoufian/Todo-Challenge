@@ -60,9 +60,18 @@ let updateTask = (req,res)=>{
         
     }   
 }
+let deleteTask = (req,res)=>{
+    let task = new Task
+    deleteTask = task.delete(id)
+    res.writeHead(200,{ 'Content-Type': 'application/json' })
+    res.end(JSON.stringify(deleteTask))
+    
+    
+}
 
 module.exports = {
     createTask,
     getTask,
-    updateTask
+    updateTask,
+    deleteTask
 }
