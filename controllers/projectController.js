@@ -65,11 +65,23 @@ let updateProj = async (req,res,id)=>{
         
     }   
 }
+
+let deleteProj = async (req,res)=>{
+    try {
+        let proj = new Project
+        deleteProje = await proj.delete(id)
+        res.writeHead(200,{ 'Content-Type': 'application/json' })
+        res.end(JSON.stringify(deleteProje))
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
 module.exports = {
     createProj,
     getProj,
-    updateProj
-    
+    updateProj,
+    deleteProj
     
     
 }
