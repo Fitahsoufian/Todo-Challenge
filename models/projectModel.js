@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql', // use localhost in development mode
     user: 'root',
-    password: '',
+    password: 'root', // use empty space in development mode
     database: 'node.js',
     multipleStatements: true
 
